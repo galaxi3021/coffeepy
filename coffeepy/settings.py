@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'phonenumber_field',
     'extra_views',
+    'bootstrap4',
+    'widget_tweaks',
 
     # Own apps
     'apps.products',

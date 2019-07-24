@@ -1,8 +1,25 @@
-<form method="post" enctype="multipart/form-data">{% csrf_token %}
-  {{ form.as_p }}
+{% extends 'base.html' %}
 
+{% block content %}
+
+{% load bootstrap4 %}
+{% load widget_tweaks %}
+
+<h1>Products</h1>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+  {% bootstrap_form form layout='inline' %}
+  <h3>Ingredients</h3>
   {% for formset in inlines %}
-    {{ formset.as_p }}
+  {% for form in formset %}
+  <div class="form-group row">
+    {% for field in form.visible_fields %}
+    <div class="col">{{ field.label }} {{ field | add_class:"form-control" }}</div>
+    {% endfor %}
+  </div>
   {% endfor %}
-  <input type="submit" value="Submit" />
+  {% endfor %}
+  {% buttons %}
+  <button type="submit" class="btn btn-primary">Submit</button>
+  {% endbuttons %}
 </form>
+{% endblock %}
