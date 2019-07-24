@@ -1,0 +1,9 @@
+<a href="{% url 'products:create' %}"> create </a>
+<ul>
+    {% for product in object_list %}
+        <img src="{{ product.image.url }}" style="max-height: 100px; padding: 10px;">
+        <li><a href="{% url 'products:detail' product.id %}">{{ product.name }}</a> <a href="{% url 'products:update' product.id %}"> update<a/></li>
+    {% empty %}
+        <li>No products yet.</li>
+    {% endfor %}
+</ul>
