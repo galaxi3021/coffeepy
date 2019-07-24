@@ -1,6 +1,6 @@
 # COFFEE PY
 
-A demo project for the course of comercial programing at Universidad Mesoamericana https://mesoamericana.edu.gt
+A demo project for the course of commercial programing at Universidad Mesoamericana https://mesoamericana.edu.gt
 
 ## Features
 
